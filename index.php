@@ -1,3 +1,7 @@
+<?php get_header(); ?>
+
+<?php if (isset($is_home)) { ?>
+<!-- Begin page content -->
 <div class="container-beranda">
 	<div class="container bg_rsud sdw">
 		<div class="row box-carousel-utama-col">
@@ -129,3 +133,67 @@
 	</div>
 </div>
 <?php }else{ ?>
+<!-- Begin page content -->
+<div class="container-beranda">
+	<div class="container bg_white sdw">
+		<?php if (isset($is_home)) { ?>
+		<!-- headline & pencarian -->
+		<div class="row">
+			<div class="col-lg-9 col-sm-9" style="padding: 0px;">
+				<div class="smarticker3">
+					<ul>
+					<?php echo get_newsticker(10)?>
+					</ul>
+				</div>
+				<script type="text/javascript" src="<?php echo base_url('themes/kutim/plugin/smarticker/smarticker.js');?>"></script>
+				<script type="text/javascript">
+					$('.smarticker3').smarticker({
+						theme: 4,
+						speed: 1500,
+						pausetime: 3600,
+						title: 'Sekilas Info: ',
+						rounded: false,
+						shadow: false,
+						animation: 'typing'
+					});
+				</script>
+			</div>
+			<div class="col-lg-3 col-sm-3" style="padding:0px;margin-bottom:10px;padding-top:0px">
+				<?php echo get_search()?>
+			</div>
+		</div>
+		<!-- headline & pencarian end -->
+		<?php }?>
+		<div class="row">
+			<?php if (isset($is_page)) { ?>
+			<div class="col-lg-3 col-sm-3" style="margin-top:10px;padding-top:0px;">
+				<div class="widget bg_primary" style="margin-bottom:10px;">
+					<?php echo get_search()?>
+				</div>
+				<div id="sidebar">
+					<?php echo get_list_page();?>
+				</div>
+				<?php get_sidebar1(); ?>
+			</div>
+			<?php }?>
+			<div class="col-lg-9 col-sm-9">
+				<?php echo $content; ?>
+			</div>
+			<?php if (isset($is_article)) { ?>
+			<div class="col-lg-3 col-sm-3" style="margin-top:10px;padding-top:0px;">
+				<div class="widget bg_primary" style="margin-bottom:10px;">
+					<?php echo get_search()?>
+				</div>
+				<?php get_sidebar2(); ?>
+			</div>
+			<?php }?>
+		</div>
+		<div class="row">
+			<div class="col-lg-12 carousel-beranda-bawah">
+				<?php echo get_tautan(6,'link')?>
+			</div>
+		</div>
+	</div>
+</div>
+<?php }?>
+<?php get_footer(); ?>
