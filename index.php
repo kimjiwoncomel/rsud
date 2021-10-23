@@ -43,3 +43,89 @@
 		</div>
 	</div>
 </div>
+
+<div class="container-beranda">
+	<div class="container bg_white sdw">
+
+		<!-- headline & pencarian end -->
+		<div class="row">
+			<div class="col-lg-9 col-sm-9" style="margin-top:0px;padding-top:0px;">
+				<div class="row">
+					<div class="col-lg-12 bg_primary">
+						<div class="carousel-beranda-utama">
+							<?php echo get_tautan(3,'link2')?>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-12" style="margin:0px;padding-top:0px;padding-bottom:0px;">
+						<div class="banner-utama">
+							<div id="myCarousel2" class="carousel carousel-fade slide" data-ride="carousel">
+								<div class="carousel-inner" role="listbox">
+									<?php echo get_banner('utama')?>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-8 col-sm-8" style="margin-top:-5px;">
+						<div role="tabpanel" style="margin-bottom:5px;">
+							<!-- Nav tabs -->
+							<ul class="nav nav-tabs" role="tablist">
+								<li role="presentation" class="active"><a href="#berita-umum" aria-controls="berita umum" role="tab" data-toggle="tab"><i class="fa fa-rss"></i> Info Kesehatan</a></li>
+								<li role="presentation"><a href="#berita-daerah" aria-controls="berita daerah" role="tab" data-toggle="tab"><i class="fa fa-rss"></i> Info RSUD</a></li>
+								<li role="presentation"><a href="#pengumuman" aria-controls="pengumuman" role="tab" data-toggle="tab"><i class="fa fa-bullhorn"></i> Pengumuman</a></li>
+							</ul>
+							<!-- Tab panes -->
+							<div class="tab-content">
+								<div role="tabpanel" class="tab-pane fadeIn animated active" id="berita-umum">
+									<?php echo list_tab_post('info-kesehatan',3)?>
+								</div>
+								<div role="tabpanel" class="tab-pane fadeIn animated" id="berita-daerah">
+									<?php echo list_tab_post('info-rsud',3)?>
+								</div>
+								<div role="tabpanel" class="tab-pane fadeIn animated" id="pengumuman">
+									<?php echo list_tab_post_2('pengumuman',3)?>
+								</div>
+							</div>
+						</div>
+						<div class="bg_primary" style="display: table;content: " ";clear: both;">
+							<h4 class="title-widget"><i class="fa fa-film" style="color:#111;"></i> <span>VIDEO TERBARU</span><hr/></h4>
+							<?php echo get_video(3)?>
+						</div>
+					</div>
+					<div class="col-lg-4 col-sm-4">
+						<div class="bg_abu box_abu bg_primary" style="margin:-5px;padding:3px 7px;margin-bottom:15px;">
+							<h4 class="title-widget"><i class="fa fa-stethoscope" style="color:#111;"></i> <span>LAYANAN IGD 24 JAM</span><hr/></h4>
+							<div class="quote-beranda">
+								<?php echo get_layanan_klinik('klinik',1,'yes')?>
+							</div>
+						</div>
+						<div class="bg_abu box_abu bg_primary" style="margin:-5px;padding:3px 7px;margin-bottom:15px;">
+							<h4 class="title-widget"><i class="fa fa-calendar" style="color:#111;"></i> <span>AGENDA KERJA</span><hr/></h4>
+							<ul class="box-list-agenda-kerja">
+								<?php echo list_event(2)?>
+							</ul>
+						</div>
+						<div class="bg_abu box_abu galeri bg_primary" style="margin:-5px;padding:3px 7px;padding-bottom:10px;">
+							<h4 class="title-widget"><i class="fa fa-picture-o" style="color:#111;"></i> <span>GALERI FOTO</span><hr/></h4>
+							<div>
+							<?php echo get_thumbnail_album(3)?>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-3 col-sm-3" style="margin-top:5px;padding-top:5px;">
+				<?php get_sidebar2(); ?>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-12 carousel-beranda-bawah">
+				<?php echo get_tautan(6,'link')?>
+			</div>
+		</div>
+	</div>
+</div>
+<?php }else{ ?>
